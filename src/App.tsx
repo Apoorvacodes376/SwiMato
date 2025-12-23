@@ -1,11 +1,9 @@
 import { NavigationProvider, useNavigation } from './context/NavigationContext';
 import { CartProvider } from './context/CartContext';
 import { Navbar } from './components/Navbar';
-import { HomePage } from './pages/HomePage';
-import { FoodDetailPage } from './pages/FoodDetailPage';
-import { CartPage } from './pages/CartPage';
 
 import React from "react";
+import Slider from "./components/Slider";
 
 const AppContent: React.FC = () => {
   const { currentPage } = useNavigation();
@@ -13,13 +11,38 @@ const AppContent: React.FC = () => {
   const renderPage = () => {
     switch (currentPage) {
       case 'home':
-        return <HomePage />;
+        return (
+          <div>
+            <h2>Home Page</h2>
+            {/* Home content */}
+          </div>
+        );
       case 'food':
-        return <FoodDetailPage />; // slider is inside this page now
+        return (
+          <div>
+            <h2>Food Ordering Page</h2>
+            {/* Your food ordering UI here */}
+            
+            {/* Embed the slider directly here */}
+            <div className="mt-6">
+              <h3>Customize Your Order</h3>
+              <Slider />
+            </div>
+          </div>
+        );
       case 'cart':
-        return <CartPage />;
+        return (
+          <div>
+            <h2>Cart Page</h2>
+            {/* Cart content */}
+          </div>
+        );
       default:
-        return <HomePage />;
+        return (
+          <div>
+            <h2>Home Page</h2>
+          </div>
+        );
     }
   };
 
