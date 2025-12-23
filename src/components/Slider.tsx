@@ -12,7 +12,7 @@ const Slider: React.FC = () => {
     setValue(newValue);
 
     // If user exceeds 100, detach circle
-    if (newValue > 100) {
+    if (newValue > 5) {
       setDetached(true);
     }
   };
@@ -41,7 +41,7 @@ const Slider: React.FC = () => {
         <input
           type="range"
           min="0"
-          max="100"
+          max="5"
           value={value}
           onChange={handleChange}
           className="slider"
