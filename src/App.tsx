@@ -6,17 +6,6 @@ import { FoodDetailPage } from './pages/FoodDetailPage';
 import { CartPage } from './pages/CartPage';
 
 import React from "react";
-import Slider from "./components/Slider";
-
-const SliderDemo: React.FC = () => {
-  return (
-    <div>
-      <h1>Interactive Slider</h1>
-      <Slider />
-      <a href="https://example.com">This link will be blocked</a>
-    </div>
-  );
-};
 
 const AppContent: React.FC = () => {
   const { currentPage } = useNavigation();
@@ -26,7 +15,7 @@ const AppContent: React.FC = () => {
       case 'home':
         return <HomePage />;
       case 'food':
-        return <FoodDetailPage />;
+        return <FoodDetailPage />; // slider is inside this page now
       case 'cart':
         return <CartPage />;
       default:
@@ -38,7 +27,6 @@ const AppContent: React.FC = () => {
     <div className="min-h-screen bg-black">
       <Navbar />
       {renderPage()}
-      {/* If you want the slider only on homepage, move <SliderDemo /> inside the 'home' case above */}
     </div>
   );
 };
@@ -48,7 +36,6 @@ function App() {
     <NavigationProvider>
       <CartProvider>
         <AppContent />
-        <SliderDemo /> {/* Slider added globally */}
       </CartProvider>
     </NavigationProvider>
   );
