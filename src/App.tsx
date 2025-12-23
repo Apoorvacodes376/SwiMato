@@ -5,6 +5,19 @@ import { HomePage } from './pages/HomePage';
 import { FoodDetailPage } from './pages/FoodDetailPage';
 import { CartPage } from './pages/CartPage';
 
+import React from "react";
+import Slider from "./components/Slider";
+
+const App: React.FC = () => {
+  return (
+    <div>
+      <h1>Interactive Slider</h1>
+      <Slider />
+      <a href="https://example.com">This link will be blocked</a>
+    </div>
+  );
+};
+
 const AppContent = () => {
   const { currentPage } = useNavigation();
 
@@ -39,19 +52,10 @@ function App() {
   );
 }
 
+
+
 export default App;
 
-import React from "react";
-import Slider from "./components/Slider";
 
-const App: React.FC = () => {
-  return (
-    <div>
-      <h1>Interactive Slider</h1>
-      <Slider />
-      <a href="https://example.com">This link will be blocked</a>
-    </div>
-  );
-};
 
 export default App;
