@@ -8,7 +8,7 @@ import { CartPage } from './pages/CartPage';
 import React from "react";
 import Slider from "./components/Slider";
 
-const SliderDemo: React.FC = () => {
+const React.FC = () => {
   return (
     <div>
       <h1>Interactive Slider</h1>
@@ -18,7 +18,7 @@ const SliderDemo: React.FC = () => {
   );
 };
 
-const AppContent: React.FC = () => {
+const AppContent = () => {
   const { currentPage } = useNavigation();
 
   const renderPage = () => {
@@ -47,10 +47,11 @@ function App() {
     <NavigationProvider>
       <CartProvider>
         <AppContent />
-        <SliderDemo /> {/* slider added here */}
       </CartProvider>
     </NavigationProvider>
   );
 }
+
+
 
 export default App;
