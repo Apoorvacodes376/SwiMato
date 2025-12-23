@@ -18,8 +18,7 @@ const SliderDemo: React.FC = () => {
   );
 };
 
-
-const AppContent = () => {
+const AppContent: React.FC = () => {
   const { currentPage } = useNavigation();
 
   const renderPage = () => {
@@ -39,6 +38,7 @@ const AppContent = () => {
     <div className="min-h-screen bg-black">
       <Navbar />
       {renderPage()}
+      {/* If you want the slider only on homepage, move <SliderDemo /> inside the 'home' case above */}
     </div>
   );
 };
@@ -48,11 +48,10 @@ function App() {
     <NavigationProvider>
       <CartProvider>
         <AppContent />
+        <SliderDemo /> {/* Slider added globally */}
       </CartProvider>
     </NavigationProvider>
   );
 }
-
-
 
 export default App;
