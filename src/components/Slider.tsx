@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
-import "./Slider.css"; // we'll add styles separately
+import "./Slider.css";
 
 const Slider: React.FC = () => {
-  const [value, setValue] = useState(50); // slider value
+  const [value, setValue] = useState(0); // slider value
   const [detached, setDetached] = useState(false); // whether circle is free
   const circleRef = useRef<HTMLDivElement | null>(null);
 
@@ -11,7 +11,7 @@ const Slider: React.FC = () => {
     const newValue = Number(e.target.value);
     setValue(newValue);
 
-    // If user exceeds 100, detach circle
+    // If user exceeds 5, detach circle
     if (newValue > 5) {
       setDetached(true);
     }
